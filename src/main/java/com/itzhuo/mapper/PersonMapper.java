@@ -19,7 +19,7 @@ public interface PersonMapper extends BaseMapper<Person> {
     List<Person> selectAll(@Param(Constants.WRAPPER) Wrapper<Person> wrapper);
 
     @Select("select p.*,d.deptno dno,d.dname dname from person p left join dept d on d.deptno=p.deptno   ${ew.customSqlSegment}")
-    @Results(id = "personMap", value = {
+    /*@Results(id = "personMap", value = {
             @Result(column = "id", property = "id", id = true),
             @Result(column = "name", property = "name"),
             @Result(column = "age", property = "age"),
@@ -27,6 +27,7 @@ public interface PersonMapper extends BaseMapper<Person> {
             @Result(column = "dno",property = "dept.deptNo"),
             @Result(column = "dname",property = "dept.dname"),
 
-    })
+    })*/
+    @ResultMap(value = "personMap")
     List<Person> selectJoin(IPage iPage, @Param(Constants.WRAPPER) Wrapper wrapper);
 }
