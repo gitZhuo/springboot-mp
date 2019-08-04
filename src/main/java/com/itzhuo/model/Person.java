@@ -12,6 +12,7 @@ import java.util.Date;
 @Data
 @TableName(value = "PERSON")
 public class Person implements Serializable {
+    private static final long serialVersionUID = -7953265230054315613L;
     private static Long serialId = 1L;
 
     @TableId(type = IdType.ID_WORKER)
@@ -21,4 +22,8 @@ public class Person implements Serializable {
     private String email;
     private Long managerId;
     private Date createTime;
+
+    private Dept dept;
+
+
 }

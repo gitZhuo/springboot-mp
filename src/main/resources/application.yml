@@ -7,6 +7,7 @@ spring:
     url: jdbc:oracle:thin:@106.13.43.152:1521:helowin
     username: test
     password: test
+
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
