@@ -18,7 +18,7 @@ public interface PersonMapper extends BaseMapper<Person> {
     @Select("select * from person ${ew.customSqlSegment}")
     List<Person> selectAll(@Param(Constants.WRAPPER) Wrapper<Person> wrapper);
 
-    @Select("select p.*,d.deptno dno,d.dname dname from person p left join dept d on d.deptno=p.deptno   ${ew.customSqlSegment}")
+    @Select("select p.*,d.deptno deptno,d.dname dname from person p left join dept d on d.deptno=p.deptno   ${ew.customSqlSegment}")
     /*@Results(id = "personMap", value = {
             @Result(column = "id", property = "id", id = true),
             @Result(column = "name", property = "name"),
